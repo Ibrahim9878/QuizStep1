@@ -1,0 +1,20 @@
+> What is the capital of France?
+Paris Bordeaux Nice Lyon Paris
+> In which year did World War II end?
+1944 1945 1947 1943 1945
+> What is the largest planet in our solar system?
+Venus Jupiter Mars Earth Jupiter
+> What is the square root of 64?
+2 3 4 8 8
+> Which programming language is this code written in?
+C Python C++ C# C++
+> Who is known as the 'Father of Computer Science'?
+CavidAtamoglanov AlanTuring BraddPitt LeonardoDicaprio CavidAtamoglanov
+> What is the chemical symbol for gold?
+Au Ua Ia Ho Au
+> How many continents are there?
+5 6 7 3 7
+> What is the tallest mountain in the world?
+Everest Talis Himalay Mountain Everest
+> What is the capital of Japan?
+Tokyo China Baku Qazax Tokyo

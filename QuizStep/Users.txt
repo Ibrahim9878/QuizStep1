@@ -4,8 +4,6 @@
 > Ibrahim Talibli 16 1 2 1
 > Ibrahim Talibli 16 1 2 1
 > Ibrahim Talibli 16 1 2 1
-
-> Ibrahim Talibli 13 1 -842150451 -842150451
-> Ibrahim Talibli 12 4 -842150447 -842150451
-> Ibrahim Talibli 14 1 -842150451 -842150451
 > Cavid Atamgloanov 25 4 4 0
+> Ibrahim Talibli 13 1 1 0
+> Bilal Talibli 911 1 0 0

@@ -7,10 +7,17 @@
 #include <algorithm>
 #include <cassert>
 #include <random>
+#include <cstdio>
 using namespace std;
+void ChangeColor2(int a)
+{
+	HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
+	SetConsoleTextAttribute(h, a);
+}
 #include"classes.h"
 #include"FreeFunctions.h"
 #include"Global Variable.h"
+
 
 class System
 {
@@ -24,7 +31,9 @@ public:
 			while (true) {
 			BaseMenu:
 				system("cls");
+				ChangeColorRandom();
 				cout << Animation << endl;
+				ChangeColor2(7);
 				cout << menu << endl;
 				int secim;
 				cout << "Your choice: ";
@@ -129,7 +138,7 @@ public:
 				}
 				else if (secim == 2)
 				{
-					
+					system("cls");
 					int Myi = 0;
 					int secim2;
 					int count1 = 1;
@@ -152,6 +161,7 @@ public:
 						string choose;
 						cout << endl << "Choose one of theese names: ";
 						getline(cin, choose);
+						CheckNameInFile2(choose);
 						quiz.ReadFromFile(choose);
 						quiz.SetName(choose);
 						quiz.Shuffle();
@@ -161,7 +171,9 @@ public:
 						while (true)
 						{
 						c:
+							
 							quiz.GetQuestions()->at(Myi)->Print();
+
 							cout << "Your Answer: ";
 							getline(cin, answer);
 							answers.push_back(answer);
@@ -285,17 +297,48 @@ public:
 					catch (exception& ex)
 					{
 						cout << ex.what() << endl;
+						system("pause");
 					}
 				}
 				else if (secim == 3)
 				{
-					users.ReadFromFileUser("Users.txt");
-					sort(users.GetUsers2()->begin(), users.GetUsers2()->end(), Compare);
+					system("cls");
+					try
+					{
+						users.ReadFromFileUser("Users.txt");
+						sort(users.GetUsers2()->begin(), users.GetUsers2()->end(), Compare);
 
-					cout << " Name:" << "Surname:" << "Age:" << "Score:" << "DuzSay:" << "SehvSay" << endl;
+						cout << " Name: " << "Surname: " << "Age: " << "Score: " << "DuzSay: " << "SehvSay" << endl;
 
-					PrintList(users.GetUsers2());
-					system("pause");
+						PrintList(users.GetUsers2());
+						system("pause");
+					}
+					catch (exception& ex)
+					{
+						cout << ex.what() << endl;
+					}
+				}
+				else if (secim == 4)
+				{
+					system("cls");
+					try
+					{
+						cin.ignore();
+						ReadNameFromFile();
+
+						string choose;
+						cout << endl << "Choose one of theese names: ";
+						getline(cin, choose);
+						CheckNameInFile2(choose);
+						deleteFile(choose);
+						deleteNameFromNames(choose);
+						system("Pause");
+					}
+					catch (exception& ex)
+					{
+						cout << ex.what() << endl;
+						system("pause");
+					}
 				}
 				else if (secim == 0)
 				{

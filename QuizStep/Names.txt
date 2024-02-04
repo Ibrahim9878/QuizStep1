@@ -1,5 +1,2 @@
-~ 982
-~ Temyurleng
-~ maqa
-~ Ibrahim
-~ Ibrahim1
+~ Quiz1
+~ Quiz2

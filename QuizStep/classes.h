@@ -81,8 +81,10 @@ public:
 	Answer* GetAnswers() { return _answers; }
 	void Print()
 	{
+		ChangeColor2(3);
 		cout << *_question << endl;
 		cout << _answers->GetAnswer1() << " " << _answers->GetAnswer2() << " " << _answers->GetAnswer3() << " " << _answers->GetAnswer4() << endl;
+		ChangeColor2(7);
 	}
 	Question operator=(Question& other)
 	{
@@ -253,7 +255,7 @@ public:
 		Setage(age);
 		this->score = 0;
 	}
-	User(string name, string surname, int age, int score,int DuzSay, int sehvSay)
+	User(string name, string surname, int age, int score, int DuzSay, int sehvSay)
 	{
 		SetName(name);
 		SetSurname(surname);
@@ -357,7 +359,7 @@ public:
 		if (!f.is_open())
 			throw exception("File is not opened");
 		string symbol, name, surname;
-		int age, score, Dsay, SSay;
+		int age = 0, score = 0, Dsay = 0, SSay = 0;
 		ClearUsers();
 		while (!f.eof())
 		{
@@ -365,7 +367,7 @@ public:
 			if (!f.eof())
 			{
 				f >> name >> surname >> age >> score >> Dsay >> SSay;
-				User* a = new User(name, surname, age, score,Dsay,SSay);
+				User* a = new User(name, surname, age, score, Dsay, SSay);
 				AddUser(a);
 			}
 		}
@@ -374,52 +376,3 @@ public:
 	vector<User*>* GetUsers2() { return users2; }
 	int GetCount() { return users2->size(); }
 };
-
-//class Result
-//{
-//	vector<User*> users;
-//	string QName;
-//	int DuzSay;
-//	int SehvSay;
-//public:
-//	Result() = default;
-//	Result(User* string name,int DuzSay,int SehvSAy)
-//	{
-//		this->user = user;
-//		QName = name;
-//		this->DuzSay = DuzSay;
-//		this->SehvSay = SehvSAy;
-//	}
-//	void SetName(string name)
-//	{
-//		if (name.length() < 3 && name.length() < 18)
-//			throw exception("Invalid length");
-//		QName = name;
-//
-//	}
-//	void WriteToFileResult(string file)
-//	{
-//		ofstream f(file, ios::out);
-//		if (!f.is_open())
-//			throw exception("File is not opened");
-//		f <<"~ " << QName << " "
-//			<< user->GetName()<< " "
-//			<< user->GetSurname()<< " "
-//			<< to_string(user->GetAge())<< " "
-//			<< to_string(user->GetScore()) << " "
-//			<< to_string(DuzSay) << " " 
-//			<< to_string(SehvSay) << "\n";
-//		f.close();
-//	}
-//	
-//
-//	~Result()
-//	{
-//		if (user != nullptr);
-//		{
-//			delete user;
-//			user = nullptr;
-//		}
-//
-//	}
-////};
